@@ -5,6 +5,7 @@ type Query {
   books: [Book!]!
   book(id: ID!): Book
   search(text: String) : [SearchItem]
+  authors: [Author!]!
 }
 
 type Mutation {
