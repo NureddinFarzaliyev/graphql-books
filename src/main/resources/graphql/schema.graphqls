@@ -6,6 +6,10 @@ type Query {
   book(id: ID!): Book
 }
 
+type Mutation {
+  addBook(bookInput: BookInput) : Book!
+}
+
 # Object Types (output types)
 
 type Book {
@@ -18,4 +22,11 @@ type Author {
   id: Int!
   name: String!
   books: [Book!]!
+}
+
+# Input Types
+
+input BookInput {
+  title: String!
+  authorId: Int!
 }
