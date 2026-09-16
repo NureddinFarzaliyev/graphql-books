@@ -1,0 +1,20 @@
+
+# Operation Types (Query, Mutation, Subscription)
+
+type Query {
+  books: [Book!]!
+}
+
+# Object Types (output types)
+
+type Book {
+  id: Int!
+  title: String!
+  author: Author
+}
+
+type Author {
+  id: Int!
+  name: String!
+  books: [Book!]!
+}
