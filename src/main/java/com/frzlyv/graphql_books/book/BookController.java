@@ -1,7 +1,9 @@
 package com.frzlyv.graphql_books.book;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -21,6 +23,11 @@ public class BookController {
   @QueryMapping
   public List<Book> books() {
     return bookRepository.findAll();
+  }
+
+  @QueryMapping
+  public Optional<Book> book(@Argument Long id) {
+    return bookRepository.findById(id);
   }
 
 }

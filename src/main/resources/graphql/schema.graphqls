@@ -3,6 +3,7 @@
 
 type Query {
   books: [Book!]!
+  book(id: ID!): Book
 }
 
 # Object Types (output types)
